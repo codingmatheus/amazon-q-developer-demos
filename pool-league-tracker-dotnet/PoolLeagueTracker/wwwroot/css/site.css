@@ -1,0 +1,120 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #f8f9fa;
+}
+
+/* Green theme customizations */
+.btn-primary {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #157347;
+  border-color: #146c43;
+}
+
+.btn-outline-primary {
+  color: #198754;
+  border-color: #198754;
+}
+
+.btn-outline-primary:hover {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.text-primary {
+  color: #198754 !important;
+}
+
+a {
+  color: #198754;
+}
+
+a:hover {
+  color: #157347;
+}
+
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: none;
+}
+
+.card-header {
+  border-bottom: none;
+}
+
+.table-success {
+  --bs-table-bg: rgba(25, 135, 84, 0.1);
+  --bs-table-striped-bg: rgba(25, 135, 84, 0.15);
+  --bs-table-active-bg: rgba(25, 135, 84, 0.2);
+  --bs-table-hover-bg: rgba(25, 135, 84, 0.15);
+  color: #198754;
+}
+
+.shadow {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+/* Custom styles for pool league */
+.match-card {
+  transition: transform 0.2s;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.stats-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #198754;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1rem;
+  }
+}

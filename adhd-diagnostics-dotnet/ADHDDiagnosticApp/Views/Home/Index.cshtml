@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="welcome-container">
+    <div class="welcome-card">
+        <h2>Welcome to the ADHD Diagnostic Assessment</h2>
+        <p>
+            This assessment consists of questions designed to help identify symptoms associated with 
+            Attention-Deficit/Hyperactivity Disorder (ADHD). Your responses will be used to generate 
+            a preliminary assessment of the likelihood that you may have ADHD.
+        </p>
+        <p>
+            <strong>Important Note:</strong> This assessment is not a substitute for a professional 
+            diagnosis. If you have concerns about ADHD, please consult with a qualified healthcare provider.
+        </p>
+        <p>
+            The assessment will take approximately 5-10 minutes to complete. Please answer each question 
+            as honestly as possible based on your experiences over the past six months.
+        </p>
+        <div class="start-button-container">
+            <a asp-action="StartAssessment" class="start-button">Start Assessment</a>
+        </div>
+    </div>
+</div>

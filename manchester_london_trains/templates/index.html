@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchester to London Train Times</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manchester to London Train Times</h1>
+            <p class="date">{{ current_date }}</p>
+        </header>
+        
+        <div class="route-info">
+            <div class="station">
+                <h2>Manchester Piccadilly</h2>
+                <p>Departure</p>
+            </div>
+            <div class="journey-icon">→</div>
+            <div class="station">
+                <h2>London Euston</h2>
+                <p>Arrival</p>
+            </div>
+        </div>
+
+        <div class="train-times">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Duration</th>
+                        <th>Operator</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for train in train_times %}
+                    <tr class="{% if 'Cancelled' in train.status %}cancelled{% elif 'Delayed' in train.status %}delayed{% endif %}">
+                        <td>{{ train.departure }}</td>
+                        <td>{{ train.arrival }}</td>
+                        <td>{{ train.duration }}</td>
+                        <td>{{ train.operator }}</td>
+                        <td>{{ train.price }}</td>
+                        <td>{{ train.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>Data last updated: {{ current_date }} | This is a demo application</p>
+        </footer>
+    </div>
+</body>
+</html>

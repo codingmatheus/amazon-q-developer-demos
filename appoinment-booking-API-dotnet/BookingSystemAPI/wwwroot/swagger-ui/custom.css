@@ -1,0 +1,115 @@
+/* Blue theme for Swagger UI */
+:root {
+    --primary-color: #1976D2;
+    --secondary-color: #2196F3;
+    --accent-color: #0D47A1;
+    --header-color: #0D47A1;
+    --link-color: #1976D2;
+    --button-color: #1976D2;
+    --button-text-color: white;
+}
+
+/* Header styling */
+.swagger-ui .topbar {
+    background-color: var(--header-color);
+}
+
+/* Main content area */
+.swagger-ui .wrapper {
+    padding: 20px;
+}
+
+/* Endpoint blocks */
+.swagger-ui .opblock.opblock-get {
+    background: rgba(33, 150, 243, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.swagger-ui .opblock.opblock-post {
+    background: rgba(25, 118, 210, 0.1);
+    border-color: var(--primary-color);
+}
+
+.swagger-ui .opblock.opblock-put {
+    background: rgba(13, 71, 161, 0.1);
+    border-color: var(--accent-color);
+}
+
+.swagger-ui .opblock.opblock-delete {
+    background: rgba(211, 47, 47, 0.1);
+}
+
+/* Operation buttons */
+.swagger-ui .opblock .opblock-summary-method {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+}
+
+/* Links */
+.swagger-ui a {
+    color: var(--link-color);
+}
+
+/* Buttons */
+.swagger-ui .btn {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border-color: var(--button-color);
+}
+
+.swagger-ui .btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Models section */
+.swagger-ui section.models {
+    border-color: var(--primary-color);
+}
+
+.swagger-ui section.models h4 {
+    color: var(--primary-color);
+}
+
+/* Response section */
+.swagger-ui .responses-inner h4, 
+.swagger-ui .responses-inner h5 {
+    color: var(--primary-color);
+}
+
+/* Table styling */
+.swagger-ui table thead tr th {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Info section */
+.swagger-ui .info .title {
+    color: var(--primary-color);
+}
+
+.swagger-ui .info {
+    margin-bottom: 30px;
+}
+
+/* Schema styling */
+.swagger-ui .model-box {
+    background: rgba(33, 150, 243, 0.05);
+}
+
+/* Try it out button */
+.swagger-ui .try-out__btn {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+}
+
+/* Execute button */
+.swagger-ui .execute {
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+}
+
+.swagger-ui .execute:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}

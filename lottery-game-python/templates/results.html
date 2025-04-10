@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lottery - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            color: var(--primary-dark);
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blue Lottery Results</h1>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a> | 
+            <a href="{{ url_for('about') }}">About Us</a>
+        </div>
+        
+        <div class="lottery-card results-card">
+            <div class="results-section">
+                <h2>Your Numbers</h2>
+                <div class="number-display">
+                    {% for num in selected_numbers %}
+                    <span class="number {% if num in matches %}match{% endif %}">{{ num }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <h2>Winning Numbers</h2>
+                <div class="number-display winning">
+                    {% for num in winning_numbers %}
+                    <span class="number {% if num in matches %}match{% endif %}">{{ num }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <h2>Matches: {{ num_matches }}</h2>
+                <div class="number-display matches">
+                    {% for num in matches %}
+                    <span class="number match">{{ num }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="prize-message">
+                    <h3>{{ prize }}</h3>
+                </div>
+            </div>
+            
+            <a href="{{ url_for('index') }}" class="play-again-btn">Play Again</a>
+        </div>
+    </div>
+</body>
+</html>

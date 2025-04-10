@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lottery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav-links a {
+            color: var(--primary-dark);
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blue Lottery</h1>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a> | 
+            <a href="{{ url_for('about') }}">About Us</a>
+        </div>
+        <div class="lottery-card">
+            <h2>Pick 6 numbers from 1 to 30</h2>
+            
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+            
+            <form method="POST">
+                <div class="number-grid">
+                    {% for num in range(1, 31) %}
+                    <div class="number-item">
+                        <input type="checkbox" id="num{{ num }}" name="number{{ loop.index }}" value="{{ num }}" class="number-checkbox">
+                        <label for="num{{ num }}" class="number-label">{{ num }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="selection-counter">Selected: <span id="count">0</span>/6</div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>Draw Numbers</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle number selection (limit to 6 and ensure uniqueness)
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.number-checkbox');
+            const counter = document.getElementById('count');
+            const submitBtn = document.getElementById('submitBtn');
+            const selectedNumbers = new Set();
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const value = parseInt(this.value);
+                    
+                    if (this.checked) {
+                        // If already have 6 numbers selected, prevent selecting more
+                        if (selectedNumbers.size >= 6) {
+                            this.checked = false;
+                            return;
+                        }
+                        selectedNumbers.add(value);
+                    } else {
+                        selectedNumbers.delete(value);
+                    }
+                    
+                    // Update counter and button state
+                    counter.textContent = selectedNumbers.size;
+                    submitBtn.disabled = selectedNumbers.size !== 6;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

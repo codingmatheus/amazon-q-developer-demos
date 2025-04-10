@@ -1,0 +1,13 @@
+type Query {
+    currentTime(timezone: String = "UTC"): TimeResponse
+}
+
+type TimeResponse {
+    currentTime: String!
+    date: String!
+    timezone: String!
+    hour: Int!
+    minute: Int!
+    second: Int!
+    timestamp: Float!
+}

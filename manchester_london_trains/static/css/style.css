@@ -1,0 +1,153 @@
+/* Red theme for Manchester to London train times */
+:root {
+    --primary-color: #c00;
+    --secondary-color: #800000;
+    --accent-color: #ff3333;
+    --text-color: #333;
+    --light-text: #fff;
+    --background-color: #f8f8f8;
+    --card-background: #fff;
+    --border-color: #ddd;
+    --cancelled-color: #ff6666;
+    --delayed-color: #ffcc66;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.date {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.route-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.station {
+    text-align: center;
+    flex: 1;
+}
+
+.station h2 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.journey-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    padding: 0 20px;
+}
+
+.train-times {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: rgba(204, 0, 0, 0.05);
+}
+
+tr.cancelled {
+    background-color: var(--cancelled-color);
+    color: var(--light-text);
+}
+
+tr.delayed {
+    background-color: var(--delayed-color);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+    
+    .route-info {
+        flex-direction: column;
+    }
+    
+    .journey-icon {
+        transform: rotate(90deg);
+        padding: 10px 0;
+    }
+}

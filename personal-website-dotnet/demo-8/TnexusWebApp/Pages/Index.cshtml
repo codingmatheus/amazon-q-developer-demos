@@ -1,0 +1,52 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container">
+    <div class="row align-items-center py-5">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">Welcome to Tnexus Ltd.</h1>
+            <p class="lead">We provide exceptional development and design services to help your business thrive in the digital world.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="/Contact" class="btn btn-primary btn-lg px-4 me-md-2">Get in Touch</a>
+                <a href="/About" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://via.placeholder.com/600x400?text=Tnexus+Ltd" class="img-fluid rounded shadow" alt="Tnexus Ltd">
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <h2 class="text-center mb-4">Our Services</h2>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Web Development</h3>
+                    <p class="card-text">Custom web applications and responsive websites built with the latest technologies.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">UI/UX Design</h3>
+                    <p class="card-text">User-centered design that creates intuitive and engaging digital experiences.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Mobile Development</h3>
+                    <p class="card-text">Native and cross-platform mobile applications for iOS and Android.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

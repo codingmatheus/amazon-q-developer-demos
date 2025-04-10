@@ -1,0 +1,49 @@
+---
+- name: Check if disk is already partitioned
+  stat:
+    path: "{{ disk_device }}1"
+  register: disk_stat
+  failed_when: false
+
+- name: Create a new primary partition
+  parted:
+    device: "{{ disk_device }}"
+    number: 1
+    state: present
+    part_end: "{{ disk_size }}"
+  when: not disk_stat.stat.exists
+  
+- name: Format the new partition
+  filesystem:
+    fstype: "{{ disk_filesystem }}"
+    dev: "{{ disk_device }}1"
+    opts: "-L {{ disk_label }}"
+  when: not disk_stat.stat.exists
+
+- name: Create mount point directory
+  file:
+    path: "{{ disk_mount_point }}"
+    state: directory
+    mode: '0755'
+
+- name: Get disk UUID
+  command: blkid -s UUID -o value {{ disk_device }}1
+  register: disk_uuid
+  changed_when: false
+
+- name: Add disk to fstab
+  mount:
+    path: "{{ disk_mount_point }}"
+    src: "UUID={{ disk_uuid.stdout }}"
+    fstype: "{{ disk_filesystem }}"
+    opts: defaults
+    state: mounted
+
+- name: Set proper permissions on mount point
+  file:
+    path: "{{ disk_mount_point }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+  notify: restart services

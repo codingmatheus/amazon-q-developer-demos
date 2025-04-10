@@ -1,0 +1,59 @@
+@model Assessment
+
+@{
+    ViewData["Title"] = "Assessment Results";
+}
+
+<div class="result-container">
+    <div class="result-card">
+        <h2>Your Assessment Results</h2>
+        
+        <div class="score-section">
+            <div class="score-circle">
+                <span class="score-number">@Model.TotalScore</span>
+                <span class="score-label">Total Score</span>
+            </div>
+        </div>
+        
+        <div class="result-interpretation">
+            <h3>Interpretation</h3>
+            <p>@Model.Result</p>
+        </div>
+        
+        <div class="result-disclaimer">
+            <h3>Important Note</h3>
+            <p>
+                This assessment provides a preliminary indication only and is not a clinical diagnosis. 
+                ADHD can only be diagnosed by qualified healthcare professionals through a comprehensive 
+                evaluation. If your results suggest you may have ADHD symptoms, we recommend consulting 
+                with a healthcare provider for further assessment.
+            </p>
+        </div>
+        
+        <div class="result-categories">
+            <h3>Response Summary by Category</h3>
+            
+            @{
+                var responsesByCategory = Model.Responses
+                    .GroupBy(r => r.Question?.Category)
+                    .ToDictionary(g => g.Key, g => g.Sum(r => r.Answer?.Score ?? 0));
+                
+                foreach (var category in responsesByCategory)
+                {
+                    <div class="category-score">
+                        <span class="category-name">@category.Key</span>
+                        <div class="category-bar">
+                            <div class="category-progress" style="width: @(category.Value * 100 / 16)%"></div>
+                        </div>
+                        <span class="category-value">@category.Value</span>
+                    </div>
+                }
+            }
+        </div>
+        
+        <div class="action-buttons">
+            <a asp-action="Index" class="home-button">Return to Home</a>
+            <a asp-action="StartAssessment" class="restart-button">Take Assessment Again</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block title %}Register - DTX Manchester{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="section">
+        <h2>Register for DTX Manchester</h2>
+        <p>Join us at the UK's leading digital transformation event. Complete the form below to secure your place at DTX Manchester 2025.</p>
+    </section>
+    
+    <section class="section">
+        <h2>Registration Options</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-content" style="border-top: 5px solid #0056b3;">
+                    <h3>Standard Pass</h3>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: #0056b3;">£495</p>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 0.5rem;">✓ Access to all keynotes</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Access to all breakout sessions</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Exhibition hall access</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Networking opportunities</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Lunch and refreshments</li>
+                        <li style="margin-bottom: 0.5rem;">✗ Workshop access</li>
+                        <li style="margin-bottom: 0.5rem;">✗ VIP networking reception</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content" style="border-top: 5px solid #004085;">
+                    <h3>Premium Pass</h3>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: #004085;">£795</p>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 0.5rem;">✓ Access to all keynotes</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Access to all breakout sessions</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Exhibition hall access</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Networking opportunities</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Lunch and refreshments</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Workshop access (1 workshop)</li>
+                        <li style="margin-bottom: 0.5rem;">✓ VIP networking reception</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Digital transformation toolkit</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content" style="border-top: 5px solid #007bff;">
+                    <h3>Group Booking (5+ people)</h3>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: #007bff;">20% Discount</p>
+                    <p>Contact our team for group booking rates and custom packages.</p>
+                    <p>Email: <a href="mailto:groups@dtxmanchester.com" style="color: #007bff;">groups@dtxmanchester.com</a></p>
+                    <p>Phone: +44 (0)161 123 4567</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Registration Form</h2>
+        <form style="max-width: 800px; margin: 0 auto;">
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Personal Information</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="firstName" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="lastName" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Company Information</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Company Name *</label>
+                        <input type="text" id="company" name="company" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="jobTitle" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Job Title *</label>
+                        <input type="text" id="jobTitle" name="jobTitle" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="industry" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Industry *</label>
+                    <select id="industry" name="industry" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">Please select</option>
+                        <option value="technology">Technology</option>
+                        <option value="finance">Finance & Banking</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="retail">Retail</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="education">Education</option>
+                        <option value="government">Government</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Registration Type</h3>
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select Pass Type *</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <div style="display: flex; align-items: center;">
+                            <input type="radio" id="standardPass" name="passType" value="standard" required style="margin-right: 0.5rem;">
+                            <label for="standardPass">Standard Pass (£495)</label>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <input type="radio" id="premiumPass" name="passType" value="premium" style="margin-right: 0.5rem;">
+                            <label for="premiumPass">Premium Pass (£795)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="workshop" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Workshop Selection (Premium Pass only)</label>
+                    <select id="workshop" name="workshop" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">Please select</option>
+                        <option value="ai">AI Implementation Strategies</option>
+                        <option value="security">Cybersecurity Best Practices</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h3>Additional Information</h3>
+                <div style="margin-bottom: 1rem;">
+                    <label for="dietaryRequirements" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Dietary Requirements</label>
+                    <input type="text" id="dietaryRequirements" name="dietaryRequirements" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="accessibilityNeeds" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Accessibility Needs</label>
+                    <input type="text" id="accessibilityNeeds" name="accessibilityNeeds" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                    <input type="checkbox" id="termsConditions" name="termsConditions" required style="margin-right: 0.5rem; margin-top: 0.25rem;">
+                    <label for="termsConditions">I agree to the <a href="#" style="color: #007bff;">Terms and Conditions</a> *</label>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                    <input type="checkbox" id="marketingConsent" name="marketingConsent" style="margin-right: 0.5rem; margin-top: 0.25rem;">
+                    <label for="marketingConsent">I would like to receive updates about DTX Manchester and future events</label>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button type="submit" class="btn" style="background-color: #0056b3; padding: 0.75rem 2rem; font-size: 1.1rem;">Register Now</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

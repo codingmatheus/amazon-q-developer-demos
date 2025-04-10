@@ -1,0 +1,4 @@
+---
+- name: restart services
+  debug:
+    msg: "Disk has been added successfully. You may need to restart services that use this disk."

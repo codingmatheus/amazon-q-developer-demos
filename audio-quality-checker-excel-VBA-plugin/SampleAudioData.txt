@@ -1,0 +1,10 @@
+Rock Music, 95.5
+Classical Music, 78.2
+Heavy Metal, 105.7
+Podcast, 82.3
+Movie Soundtrack, 88.9
+Industrial Noise, 110.2
+Ambient Sound, 65.4
+Live Concert, 98.7
+TV Show, 85.1
+Construction Site, 103.8

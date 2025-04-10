@@ -1,0 +1,119 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Pool League Tracker</h1>
+    <p>Track your favorite pool leagues, teams, and players all in one place.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Active Leagues</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.ActiveLeagues.Any())
+                {
+                    <div class="list-group">
+                        @foreach (var league in Model.ActiveLeagues)
+                        {
+                            <a asp-page="/Leagues/Details" asp-route-id="@league.Id" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@league.Name</h5>
+                                    <small>@league.Teams.Count teams</small>
+                                </div>
+                                <p class="mb-1">@league.Description</p>
+                                <small>Started: @league.StartDate.ToShortDateString()</small>
+                            </a>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p>No active leagues found.</p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Upcoming Matches</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.UpcomingMatches.Any())
+                {
+                    <div class="list-group">
+                        @foreach (var match in Model.UpcomingMatches)
+                        {
+                            <a asp-page="/Matches/Details" asp-route-id="@match.Id" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@match.HomeTeam?.Name vs @match.AwayTeam?.Name</h5>
+                                    <small>@match.MatchDate.ToShortDateString()</small>
+                                </div>
+                                <p class="mb-1">@match.League?.Name</p>
+                            </a>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p>No upcoming matches found.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Top Teams</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.TopTeams.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Team</th>
+                                    <th>Played</th>
+                                    <th>Won</th>
+                                    <th>Lost</th>
+                                    <th>Drawn</th>
+                                    <th>Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int rank = 1;}
+                                @foreach (var team in Model.TopTeams)
+                                {
+                                    <tr>
+                                        <td>@(rank++)</td>
+                                        <td><a asp-page="/Teams/Details" asp-route-id="@team.Id">@team.Name</a></td>
+                                        <td>@team.MatchesPlayed</td>
+                                        <td>@team.Wins</td>
+                                        <td>@team.Losses</td>
+                                        <td>@team.Draws</td>
+                                        <td>@team.Points</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p>No teams found.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

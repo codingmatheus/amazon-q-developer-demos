@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}DTX Manchester - Digital Transformation Expo{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h2>DTX Manchester 2025</h2>
+        <p>Join us for the UK's leading digital transformation event</p>
+        <p>May 15-16, 2025 | Manchester Central</p>
+        <a href="{{ url_for('register') }}" class="btn">Register Now</a>
+    </div>
+</div>
+
+<div class="container">
+    <section class="section">
+        <h2>About the Event</h2>
+        <p>DTX Manchester brings together IT leaders, digital innovators, and technology enthusiasts for two days of learning, networking, and discovery. Explore the latest trends in digital transformation, cloud computing, cybersecurity, AI, and more.</p>
+        
+        <p>Whether you're looking to modernize your IT infrastructure, enhance your digital strategy, or discover cutting-edge solutions, DTX Manchester offers insights and connections to help you succeed in the digital age.</p>
+    </section>
+    
+    <section class="section">
+        <h2>Key Highlights</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-image" style="background-color: #0056b3;"></div>
+                <div class="card-content">
+                    <h3>Expert Speakers</h3>
+                    <p>Learn from industry leaders and technology pioneers who are driving digital innovation across sectors.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-color: #007bff;"></div>
+                <div class="card-content">
+                    <h3>Interactive Workshops</h3>
+                    <p>Gain hands-on experience with new technologies and methodologies in our practical workshop sessions.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-color: #0056b3;"></div>
+                <div class="card-content">
+                    <h3>Technology Showcase</h3>
+                    <p>Explore solutions from leading vendors and innovative startups in our extensive exhibition area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Featured Speakers</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-image" style="background-color: #004085;"></div>
+                <div class="card-content">
+                    <h3>Sarah Johnson</h3>
+                    <p>CTO, TechInnovate</p>
+                    <p>Digital Transformation in Enterprise</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-color: #004085;"></div>
+                <div class="card-content">
+                    <h3>Michael Chen</h3>
+                    <p>AI Research Director, FutureAI</p>
+                    <p>Practical Applications of AI in Business</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-color: #004085;"></div>
+                <div class="card-content">
+                    <h3>Emma Williams</h3>
+                    <p>CISO, SecureDigital</p>
+                    <p>Cybersecurity in the Age of Digital Transformation</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="text-align: center; margin-top: 1.5rem;">
+            <a href="{{ url_for('speakers') }}" class="btn">View All Speakers</a>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Our Sponsors</h2>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 2rem 0;">
+            <div style="width: 150px; height: 100px; background-color: #0056b3; margin: 1rem; display: flex; align-items: center; justify-content: center; color: white;">Sponsor 1</div>
+            <div style="width: 150px; height: 100px; background-color: #0056b3; margin: 1rem; display: flex; align-items: center; justify-content: center; color: white;">Sponsor 2</div>
+            <div style="width: 150px; height: 100px; background-color: #0056b3; margin: 1rem; display: flex; align-items: center; justify-content: center; color: white;">Sponsor 3</div>
+            <div style="width: 150px; height: 100px; background-color: #0056b3; margin: 1rem; display: flex; align-items: center; justify-content: center; color: white;">Sponsor 4</div>
+        </div>
+    </section>
+</div>
+{% endblock %}

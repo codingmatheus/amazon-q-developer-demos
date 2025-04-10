@@ -1,0 +1,38 @@
+@model QuestionViewModel
+
+@{
+    ViewData["Title"] = "Question";
+}
+
+<div class="question-container">
+    <div class="progress-bar">
+        <div class="progress" style="width: @(Model.CurrentQuestionIndex * 100 / Model.TotalQuestions)%"></div>
+    </div>
+    <div class="question-number">
+        Question @Model.CurrentQuestionIndex of @Model.TotalQuestions
+    </div>
+    
+    <div class="question-card">
+        <h2>@Model.CurrentQuestion.Text</h2>
+        
+        <form asp-action="SubmitAnswer" method="post">
+            <input type="hidden" name="assessmentId" value="@Model.AssessmentId" />
+            <input type="hidden" name="questionId" value="@Model.CurrentQuestion.Id" />
+            <input type="hidden" name="questionIndex" value="@Model.CurrentQuestionIndex" />
+            
+            <div class="answer-options">
+                @foreach (var answer in Model.CurrentQuestion.PossibleAnswers)
+                {
+                    <div class="answer-option">
+                        <input type="radio" id="answer_@answer.Id" name="answerId" value="@answer.Id" required />
+                        <label for="answer_@answer.Id">@answer.Text</label>
+                    </div>
+                }
+            </div>
+            
+            <div class="navigation-buttons">
+                <button type="submit" class="next-button">Next</button>
+            </div>
+        </form>
+    </div>
+</div>

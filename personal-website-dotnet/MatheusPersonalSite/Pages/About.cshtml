@@ -1,0 +1,98 @@
+@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About Me";
+}
+
+<div class="about-page">
+    <div class="about-header">
+        <h1>About Me</h1>
+        <div class="profile-image">
+            <!-- Replace with your actual image -->
+            <div class="placeholder-image">MG</div>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <section class="bio">
+            <h2>Who I Am</h2>
+            <p>
+                Hello! I'm Matheus Guimaraes, a passionate developer with expertise in .NET technologies.
+                I love building web applications and solving complex problems with elegant solutions.
+            </p>
+            <p>
+                With a background in computer science and several years of professional experience,
+                I've worked on a variety of projects ranging from enterprise applications to personal
+                creative endeavors.
+            </p>
+        </section>
+
+        <section class="skills">
+            <h2>My Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>C#</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>ASP.NET Core</li>
+                        <li>Entity Framework</li>
+                        <li>React</li>
+                        <li>Angular</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Senior Developer</h3>
+                        <p>Leading development of cloud-native applications using .NET 9 and Azure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer</h3>
+                        <p>Built and maintained web applications using ASP.NET Core and React.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Junior Developer</h3>
+                        <p>Started my professional journey working on .NET Framework applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>University Name, Graduated 2018</p>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lottery - About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>About Blue Lottery</h1>
+        
+        <div class="lottery-card about-card">
+            <h2>Our Story</h2>
+            <p>Blue Lottery was founded in 2020 with a simple mission: to provide a fun, fair, and exciting lottery experience with a distinctive blue theme that represents trust and reliability.</p>
+            
+            <h2>Our Mission</h2>
+            <p>At Blue Lottery, we believe in creating entertaining games of chance while maintaining the highest standards of transparency and fairness. Our unique 6/30 format offers better odds than traditional lotteries while still providing exciting jackpot opportunities.</p>
+            
+            <h2>How It Works</h2>
+            <p>Players select 6 numbers from 1 to 30. Our system then randomly draws 6 winning numbers. The more numbers you match, the bigger your prize!</p>
+            
+            <div class="prize-table">
+                <h2>Prize Structure</h2>
+                <table>
+                    <tr>
+                        <th>Matches</th>
+                        <th>Prize</th>
+                    </tr>
+                    <tr>
+                        <td>2 matches</td>
+                        <td>Small prize</td>
+                    </tr>
+                    <tr>
+                        <td>3 matches</td>
+                        <td>Decent prize</td>
+                    </tr>
+                    <tr>
+                        <td>4 matches</td>
+                        <td>Good prize</td>
+                    </tr>
+                    <tr>
+                        <td>5 matches</td>
+                        <td>Great prize</td>
+                    </tr>
+                    <tr>
+                        <td>6 matches</td>
+                        <td>JACKPOT!</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? We'd love to hear from you!</p>
+            <p>Email: info@bluelottery.example.com</p>
+            <p>Phone: (555) 123-4567</p>
+            
+            <a href="{{ url_for('index') }}" class="play-again-btn">Play Now</a>
+        </div>
+    </div>
+</body>
+</html>

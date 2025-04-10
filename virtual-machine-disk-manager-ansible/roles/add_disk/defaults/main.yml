@@ -1,0 +1,7 @@
+---
+# Default disk parameters
+disk_device: /dev/sdb
+disk_size: 10G
+disk_mount_point: /data
+disk_filesystem: ext4
+disk_label: data
